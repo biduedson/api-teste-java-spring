@@ -72,6 +72,7 @@ public class ProductController {
     public ResponseEntity<Object> updateProduct(@PathVariable(value="id") UUID id,
                                                 @RequestBody @Valid ProductRecordDto productRecordDto) {
 try{
+
     UUID idString  = UUID.fromString(id.toString());
     if(!UUIDVAlidator.isValidUUID(id.toString())){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("id com formato invalido.");
